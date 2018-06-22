@@ -1,23 +1,32 @@
-<ngb-carousel *ngIf="images">
-  <ng-template ngbSlide>
-    <img [src]="images[0]" alt="Random first slide">
-    <div class="carousel-caption">
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+<div class="container padBot10">
+  <div class="row">
+    <div class="col-1">
+      <a><i routerLink="/shoes" class="fas fa-arrow-circle-left fa-3x pinkText"></i></a>
     </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <img [src]="images[1]" alt="Random second slide">
-    <div class="carousel-caption">
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div class="col-11">
+      <ngb-carousel *ngIf="shoes[id]" class="imgCar">
+        <ng-template ngbSlide>
+          <img src="assets/{{shoes[id].img}}" class="img-fluid imgCar responsive"  alt="Random first slide">
+          <!-- <div class="carousel-caption">
+            <h3>First slide label</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </div> -->
+        </ng-template>
+        <ng-template ngbSlide>
+          <img src="assets/{{shoes[id].img2}}" class="img-fluid imgCar responsive"  alt="Random second slide">
+          
+        </ng-template>
+        <ng-template ngbSlide >
+          <img src="assets/{{shoes[id].img3}}" class="img-fluid imgCar responsive" alt="Random third slide">
+    
+        </ng-template>
+      </ngb-carousel>
+    
+      <div class="marAuto">
+        <h3 class="pinkText">{{shoes[id].name}}</h3>
+        <h3 class="pinkText">${{shoes[id].price}}.00</h3>
+      </div>
     </div>
-  </ng-template>
-  <ng-template ngbSlide>
-    <img [src]="images[2]" alt="Random third slide">
-    <div class="carousel-caption">
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+
     </div>
-  </ng-template>
-</ngb-carousel>
+  </div>

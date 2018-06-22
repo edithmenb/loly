@@ -1,15 +1,14 @@
 <div class="container padBot10">
+  <a><i routerLink="/home" class="fas fa-arrow-circle-left fa-3x pinkText"></i></a>
   <div class="row" >
-    <div class="col-6" *ngFor="let shoe of shoes">
-      
-      <img src="assets/{{shoe.img}}" class="img-fluid" alt="">
+    <div class="col-6 marAuto" *ngFor="let shoe of shoes; let i = index">
+      <img src="assets/{{shoe.img}}" class="img-fluid imgList" alt="">
       <div class="centered">
-      <button class="btn btn-block pinkButton" (click)="navergarAArticulo2(shoe.name)">
+      <button class="btn btn-block pinkButton" (click)="navergarAArticulo2(shoe.name,i)">
         <span class="bold">{{shoe.name}}</span><br>
         <span class="bold" [ngClass]="{'colorGreen': (shoe.price<740)}">${{shoe.price}}.00</span>
       </button>
       </div>
-
     </div>
   </div>
 </div>

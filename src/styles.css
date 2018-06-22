@@ -21,3 +21,13 @@ body{
 .colorGreen{
     color: green;
 }
+.pinkText {
+    color: palevioletred;
+}
+.imgList {
+    max-height: 300px;
+}
+.marAuto {
+    margin: auto;
+    text-align: center;
+}

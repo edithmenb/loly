@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { SHOES } from '../shoesCatalog';
 @Component({
   selector: 'app-shoes',
   templateUrl: './shoes.component.html',
@@ -8,41 +8,18 @@ import { Router } from '@angular/router';
 })
 export class ShoesComponent implements OnInit {
 
-  shoes= [
-    {
-      img: "Sara.jpg",
-      name: "SARA",
-      price: 749.00
-    },
-    {
-      img: "dayana.jpg",
-      name: "DAYANA",
-      price: 719.00
-    },
-    {
-      img: "naomi.jpg",
-      name: "NAOMI",
-      price: 749.00
-    },
-    {
-      img: "juliana.jpg",
-      name: "JULIANA",
-      price: 749.00
-    },
-    {
-      img: "fabiana.jpg",
-      name: "FABIANA",
-      price: 749.00
-    }
-  ];
-
-  constructor(public router: Router) { }
-
+  shoes = SHOES;
+  i: number = 0;
+  constructor(public router: Router) {
+   
+  }
   ngOnInit() {
+   
   }
 
-  navergarAArticulo2(name:string){
-    this.router.navigate(['article', name]);
+  navergarAArticulo2(name: string, i: number){
+    this.i = i;
+    this.router.navigate(['article', i]);
   }
 
 }

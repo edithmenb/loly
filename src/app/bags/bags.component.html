@@ -1,7 +1,8 @@
 <div class="container padBot10">
+    <a><i routerLink="/home" class="fas fa-arrow-circle-left fa-3x pinkText"></i></a>
     <div class="row" >
-      <div class="col-6" *ngFor="let bag of bags">
-        <img src="assets/{{bag.img}}" class="img-fluid" alt="">
+      <div class="col-6 marAuto" *ngFor="let bag of bags">
+        <img src="assets/{{bag.img}}" class="img-fluid imgList" alt="">
         <div class="centered">
         <button class="btn btn-block pinkButton disabled bold">
           <span class="bold">{{bag.name}}</span><br>

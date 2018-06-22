@@ -1,0 +1,19 @@
+<div class="container padBot10">
+    <a><i routerLink="/home" class="fas fa-arrow-circle-left fa-3x pinkText"></i></a>
+
+  <div class="row" >
+
+    <div class="col-12 marAuto" *ngFor="let shoe of shoes; let i = index">
+      <div *ngIf="shoe.price<740">
+        <img src="assets/{{shoe.img}}" class="img-fluid imgList" alt="">
+        <div class="centered">
+          <button class="btn btn-block pinkButton" disabled>
+            <span class="bold">{{shoe.name}}</span><br>
+            <span class="bold" [ngClass]="{'colorGreen': (shoe.price<740)}">${{shoe.price}}.00</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<br><br><br><br><br><br>
+</div>

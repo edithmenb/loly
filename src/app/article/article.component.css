@@ -1,0 +1,9 @@
+.imgCar {
+    max-height: 450;
+    max-width: 470px;
+    background-color:lightpink;
+    margin:auto;
+}
+.marAuto {
+    text-align: center;
+}

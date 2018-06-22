@@ -10,6 +10,7 @@ import { ShoesComponent } from './shoes/shoes.component';
 import { BagsComponent } from './bags/bags.component';
 import { ArticleComponent } from './article/article.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SalesComponent } from './sales/sales.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,8 @@ const appRoutes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'shoes', component: ShoesComponent },
   { path: 'bags', component: BagsComponent },
+  { path: 'sales', component: SalesComponent },
+  { path: 'notfound', component: NotFoundComponent },
   { path: 'article/:id', component: ArticleComponent },
 ]
 @NgModule({
@@ -27,7 +30,8 @@ const appRoutes: Routes = [
     ShoesComponent,
     BagsComponent,
     ArticleComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SalesComponent
   ],
   imports: [
     BrowserModule,
