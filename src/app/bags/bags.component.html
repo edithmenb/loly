@@ -1,0 +1,13 @@
+<div class="container padBot10">
+    <div class="row" >
+      <div class="col-6" *ngFor="let bag of bags">
+        <img src="assets/{{bag.img}}" class="img-fluid" alt="">
+        <div class="centered">
+        <button class="btn btn-block pinkButton disabled bold">
+          <span class="bold">{{bag.name}}</span><br>
+          <span class="bold" [ngClass]="{'colorGreen': (bag.price<1000)}">${{bag.price}}.00</span>
+        </button>
+        </div>
+      </div>
+    </div>
+  </div>
