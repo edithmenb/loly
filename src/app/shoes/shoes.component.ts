@@ -1,6 +1,7 @@
+import { ShoesService } from './../shoes.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SHOES } from '../shoesCatalog';
+
 @Component({
   selector: 'app-shoes',
   templateUrl: './shoes.component.html',
@@ -8,10 +9,10 @@ import { SHOES } from '../shoesCatalog';
 })
 export class ShoesComponent implements OnInit {
 
-  shoes = SHOES;
+  shoes = [];
   i: number = 0;
-  constructor(public router: Router) {
-   
+  constructor(public router: Router, public shoesService: ShoesService) {
+   this.shoes = shoesService.getShoes();
   }
   ngOnInit() {
    

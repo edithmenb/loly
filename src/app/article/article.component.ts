@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SHOES } from '../shoesCatalog';
+import { ShoesService } from '../shoes.service';
 
 @Component({
   selector: 'app-article',
@@ -10,8 +10,9 @@ import { SHOES } from '../shoesCatalog';
 export class ArticleComponent implements OnInit {
 
   id: number;
-  shoes = SHOES;
-  constructor(public activatedRoute: ActivatedRoute) {
+  shoes = [];
+  constructor(public activatedRoute: ActivatedRoute, public shoesService: ShoesService) {
+    this.shoes = shoesService.getShoes();
     this.id = this.activatedRoute.snapshot.params['id'];
     console.log(this.shoes);
   }

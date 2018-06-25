@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BagsService } from '../bags.service';
 
 @Component({
   selector: 'app-bags',
@@ -6,37 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bags.component.css']
 })
 export class BagsComponent implements OnInit {
-
-  constructor() { }
+  bags = [];
+  
+  constructor(public bagsService: BagsService) { 
+    this.bags = this.bagsService.getBags();
+  }
 
   ngOnInit() {
   }
 
-  bags= [
-    {
-      img: "bunny.jpg",
-      name: "BUNNY",
-      price: 1099
-    },
-    {
-      img: "roberta.jpg",
-      name: "ROBERTA",
-      price: 1199
-    },
-    {
-      img: "james.jpg",
-      name: "JAMES",
-      price: 600
-    },
-    {
-      img: "cordelia.jpg",
-      name: "CORDELIA",
-      price: 1199
-    },
-    {
-      img: "camel.jpg",
-      name: "CAMEL",
-      price: 1099
-    }
-  ];
+  
 }
